@@ -107,12 +107,21 @@
     border-radius: 4px;
     padding: var(--spacing-12) var(--spacing-16);
     border: 2px solid var(--dark-300);
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .pagination .pagination__link:first-of-type,
 .pagination .pagination__link:last-of-type {
     color: var(--dark-500);
 }
+
+.pagination .pagination__link:hover {
+    background-color: var(--primary-900);
+    color: var(--light-bg-solid);
+    border-color: var(--primary-500);
+}
+
+
 
 .pagination .pagination__link--selected {
     border-color: var(--primary-solid);
