@@ -121,8 +121,6 @@
     border-color: var(--primary-500);
 }
 
-
-
 .pagination .pagination__link--selected {
     border-color: var(--primary-solid);
     color: var(--primary-solid);
