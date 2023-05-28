@@ -19,7 +19,7 @@ a {
     color: inherit;
 }
 
-header,
+.page-header,
 footer {
     font-family: var(--alternative-font);
     color: var(--light-font-solid);
@@ -29,10 +29,12 @@ ul, ol {
     list-style-type: none;
 }
 
-p {
-    font-size: 1.8em;
-}
-
 img {
     width: 100%;
+}
+
+input[type="text"]::placeholder {
+    color: var(--dark-300);
+    font-family: var(--base-font);
+    font-weight: 500;
 }

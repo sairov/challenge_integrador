@@ -7,107 +7,117 @@
     <title>Home | Funkoshop</title>
     <link rel="stylesheet" href="../../css/index.css">
 </head>
-<body> 
-    <header> <!-- Inicio Header -->
-        <nav>
-            <picture>
+<body class="grid-fixed">
+    <header class="page-header"> <!-- Inicio Header -->
+        <nav class="navbar container">
+            <picture class="nabvar__logo">
                 <a href="../../index.html">
                     <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop">
                 </a>
             </picture>
-            <ul>
-                <li>
-                    <a href="../shop/shop.html">SHOP</a>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">LLaveros</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="./contact.html">CONTACTO</a>
-                </li>
+                    <a class="navbar__link" href="../contact.html">CONTACTO</a>
+                </li class="navbar__item">
                 <li>
-                    <a href="./login.html">LOGIN</a>
-                </li>
-                <li>
-                    <a href="../shop/cart.html">
+                    <a class="navbar__link" href="../admin/login.html">LOGIN</a>
+                </li class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="../cart.html">
                         <img src="../../img/icons/cart-icon.svg" alt="ícono de carrito">
                     </a>
                 </li>
             </ul>
         </nav>
     </header> <!--   Fin Header -->
-    <main class="container">
-        <section>
-            <img src="../../img/icons/search_icon.svg" alt="search_icon">
-            <input type="text" name="search" id="search">
+    <main id="admin" class="container">
+        <section class="admin__search">
+            <iconify-icon class="admin__icon" icon="charm:search"></iconify-icon>
+            <input class="admin__search-bar" type="text" name="search" id="search" placeholder="código, nombre o categoria">
         </section>
-        <section>
-            <div>
+        <section class="admin__list">
+            <div class="admin__header">
                 <h2>LISTADO DE PRODUCTOS</h2>
-                <span>AGREGAR<a href="./create.html">+</a></span>
+                <span>AGREGAR<a href="./create.html"><iconify-icon icon="bxs:plus-square" style="color: #f33;"></iconify-icon></a></span>
             </div>
-            <div>
-                <header>
+            <div class="admin-table">
+                <header class="admin-table__header">
                     <h3>ID</h3>
                     <h3>Código</h3>
                     <h3>Nombre del Producto</h3>
                     <h3>Categoría</h3>
                 </header>
-                <article>
+                <article class="admin-table__row">
                     <p>1</p>
                     <p>STW001001</p>
                     <p>Baby Yoda Blueball</p>
                     <p>Figura Coleccionable</p>
-                    <a href=""><img src="../../img/icons/edit_pencil.svg" alt=""></a>
-                    <a href=""><img src="../../img/icons/delete_trash.svg" alt=""></a>
+                    <a href=""><iconify-icon icon="mdi:pencil" style="color: #1d84b5;"></iconify-icon></a>
+                    <a href=""><iconify-icon icon="heroicons-solid:trash" style="color: #f33;"></iconify-icon></a>
                 </article>
-                <article>
+                <article class="admin-table__row">
                     <p>2</p>
                     <p>STW001002</p>
                     <p>Boba Fett Fighter</p>
                     <p>Figura Coleccionable</p>
-                    <a href=""><img src="../../img/icons/edit_pencil.svg" alt=""></a>
-                    <a href=""><img src="../../img/icons/delete_trash.svg" alt=""></a>
+                    <a href=""><iconify-icon icon="mdi:pencil" style="color: #1d84b5;"></iconify-icon></a>
+                    <a href=""><iconify-icon icon="heroicons-solid:trash" style="color: #f33;"></iconify-icon></a>
                 </article>
-                <article>
+                <article class="admin-table__row">
                     <p>3</p>
                     <p>STW001003</p>
                     <p>Luke Skylwalker & Grogu</p>
                     <p>Figura Coleccionable</p>
-                    <a href=""><img src="../../img/icons/edit_pencil.svg" alt=""></a>
-                    <a href=""><img src="../../img/icons/delete_trash.svg" alt=""></a>
+                    <a href=""><iconify-icon icon="mdi:pencil" style="color: #1d84b5;"></iconify-icon></a>
+                    <a href=""><iconify-icon icon="heroicons-solid:trash" style="color: #f33;"></iconify-icon></a>
                 </article>
-                <article>
+                <article class="admin-table__row">
                     <p>4</p>
                     <p>STW001004</p>
                     <p>Stormtrooper Lightsaber</p>
                     <p>Figura Coleccionable</p>
-                    <a href=""><img src="../../img/icons/edit_pencil.svg" alt=""></a>
-                    <a href=""><img src="../../img/icons/delete_trash.svg" alt=""></a>
+                    <a href=""><iconify-icon icon="mdi:pencil" style="color: #1d84b5;"></iconify-icon></a>
+                    <a href=""><iconify-icon icon="heroicons-solid:trash" style="color: #f33;"></iconify-icon></a>
                 </article>
             </div>
         </section>
     </main>
-    <footer>
-        <section>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="../shop/shop.html">SHOP</a>
-                    </li>
-                    <li>
-                        <a href="./register.html">REGISTRARSE</a>
-                    </li>
-                    <li>
-                        <a href="./login.html">LOGIN</a>
-                    </li>
-                    <li>
-                        <a href="./contact.html">CONTACTO</a>
-                    </li>
-                </ul>
-                <picture>
-                    <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
-                </picture>
-            </nav>
-        </section>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/shop/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/admin/login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 </body>
 </html>

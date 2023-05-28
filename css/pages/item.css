@@ -59,12 +59,7 @@
 }
 
 .item__cart .item__submit {
-    background-color: var(--primary-solid);
-    color: var(--light-font-solid);
     font-size: var(--font-medium);
-    padding: var(--spacing-8) var(--spacing-16);
-    border: none;
-    cursor: pointer;
 }
 
 .item__promo {

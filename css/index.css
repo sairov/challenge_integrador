@@ -13,6 +13,8 @@
 
 @import url('./partials/header.css');
 @import url('./partials/footer.css');
+@import url('./partials/buttons.css');
+@import url('./partials/form.css');
 @import url('./partials/card.css');
 @import url('./partials/slider.css');
 
@@ -21,3 +23,8 @@
 @import url('./pages/home.css');
 @import url('./pages/shop.css');
 @import url('./pages/item.css');
+@import url('./pages/admin.css');
+@import url('./pages/login.css');
+@import url('./pages/register.css');
+@import url('./pages/create.css');
+@import url('./pages/edit.css');

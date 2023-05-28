@@ -1,6 +1,6 @@
 /* HEADER */
 
-header {
+.page-header {
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
 }
