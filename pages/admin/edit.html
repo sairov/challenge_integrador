@@ -7,133 +7,147 @@
     <title>Home | Funkoshop</title>
     <link rel="stylesheet" href="../../css/index.css">
 </head>
-<body> 
-    <header> <!-- Inicio Header -->
-        <nav>
-            <picture>
+<body class="grid-fixed">
+    <header class="page-header"> <!-- Inicio Header -->
+        <nav class="navbar container">
+            <picture class="nabvar__logo">
                 <a href="../../index.html">
                     <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop">
                 </a>
             </picture>
-            <ul>
-                <li>
-                    <a href=".././shop.html">SHOP</a>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">LLaveros</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="./contact.html">CONTACTO</a>
-                </li>
+                    <a class="navbar__link" href="../contact.html">CONTACTO</a>
+                </li class="navbar__item">
                 <li>
-                    <a href="./login.html">LOGIN</a>
-                </li>
-                <li>
-                    <a href="../../cart.html">
+                    <a class="navbar__link" href="./login.html">LOGIN</a>
+                </li class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="../cart.html">
                         <img src="../../img/icons/cart-icon.svg" alt="ícono de carrito">
                     </a>
                 </li>
             </ul>
         </nav>
     </header> <!--   Fin Header -->
-    <main class="container">
-        <section>
-            <h2>CREAR NUEVO ITEM</h2>
-            <form action="/admin/create" method="POST" enctype="application/x-www-form-urlencoded">
-                <div>
-                    <label class="form__box--label" for="collection">Categoría:</label>
-                    <select class="form__box--select" name="collection" id="collection" required>
+    <main id="edit">
+        <h2 class="edit__title">EDITAR ITEM</h2>
+        <form class="edit__form" action="/admin/edit" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="form__flex">
+                <div class="form__box--flex">
+                    <label class="form__label" for="collection">Categoría:</label>
+                    <select class="form__select" name="collection" id="collection" required>
                         <option value="" disabled selected hidden>Seleccionar</option>
                         <option value="Figuras Coleccionables">Figuras Coleccionables</option>
                         <option value="Llaveros">Llaveros</option>
                         <option value="Remeras">Remeras</option>
                     </select>
                 </div>
-                <div>
-                    <label for="collection">Licencia:</label>
-                    <select name="collection" id="collection" required>
+                <div class="form__box--flex">
+                    <label class="form__label" for="collection">Licencia:</label>
+                    <select class="form__select" name="collection" id="collection" required>
                         <option value="" disabled selected hidden>Seleccionar</option>
                         <option value="starwars">Star Wars</option>
                         <option value="pokemon">Pokemon</option>
                         <option value="harrypotter">Harry Potter</option>
                     </select>
                 </div>
-                <div>
-                    <label for="name">Nombre del producto:</label>
-                    <input type="text" name="name" id="name" placeholder="nombre del producto" required>
+            </div>
+            <div class="form__box--flex">
+                <label class="form__label" for="name">Nombre del producto:</label>
+                <input class="form__input" type="text" name="name" id="name" placeholder="Kakashi Hatake Shippuden Saga" required>
+            </div>
+            <div>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Descripción del producto" required></textarea>
+            </div>
+            <div class="form__flex">
+                <div class="form__box--flex">
+                    <label class="form__label" for="sku">SKU:</label>
+                    <input class="form__input" type="text" name="sku" id="sku" placeholder="SSK111AB001" required>
                 </div>
-                <div>
-                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Descripción del producto" required></textarea>
+                <div class="form__box--flex">
+                    <label class="form__label" for="price">Precio:</label>
+                    <div class="form__input--wrapper"><span>$</span><input class="form__input" type="text" name="price" id="price" data-type="currency" placeholder="0.000,00"></div>
                 </div>
-                <div>
-                    <label for="sku">SKU:</label>
-                    <input type="text" name="sku" id="sku" placeholder="ABCXXXYYY" required>
+                <div class="form__box--flex">
+                    <label class="form__label" for="stock">Stock:</label>
+                    <div class="form__input--wrapper"><input class="form__input" type="text" name="stock" id="stock" placeholder="0" required><span>unidades</span></div>
                 </div>
-                <div>
-                    <label for="price">Precio:</label>
-                    <input type="text" name="price" id="price" data-type="currency" placeholder="$ 0.000,00">
+            </div>
+            <div class="form__flex">
+                <div class="form__box--flex">
+                    <label class="form__label" for="discount">Descuento:</label>
+                    <div class="form__input--wrapper"><input class="form__input" type="text" name="discount" id="discount" placeholder="0" required><span>%</span></div>
                 </div>
-                <div>
-                    <label for="stock">Stock:</label>
-                    <input type="number" min="0" name="stock" id="stock" placeholder="0 unidades" required>
-                </div>
-                <div>
-                    <label for="discount">Descuento:</label>
-                    <input type="number" min="0" max="100" step="5" name="discount" id="discount" placeholder="0 %" required>
-                </div>
-                <div>
-                    <label for="dues">Cuotas:</label>
-                    <select name="dues" id="dues">
-                        <option value="0">0 cuotas</option>
-                        <option value="3">3 cuotas</option>
-                        <option value="6">6 cuotas</option>
-                        <option value="9">9 cuotas</option>
-                        <option value="12">12 cuotas</option>
-                        <option value="18">18 cuotas</option>
-                        <option value="24">24 cuotas</option>
+                <div class="form__box--flex">
+                    <label class="form__label" for="dues">Cuotas:</label>
+                    <select class="form__select" name="dues" id="dues">
+                        <option value="0">Sin cuotas</option>
+                        <option value="3">3 cuotas s/ interés</option>
+                        <option value="6">6 cuotas s/ interés</option>
+                        <option value="9">9 cuotas s/ interés</option>
+                        <option value="12">12 cuotas s/ interés</option>
+                        <option value="18">18 cuotas s/ interés</option>
+                        <option value="24">24 cuotas s/ interés</option>
                     </select>
                 </div>
-                <div>
-                    <label for="img">Imagenes:</label>
-                    <input type="file" name="img" id="img" multiple> 
+            </div>
+            <div class="form__box--flex">
+                <label class="form__label" for="images">Imagenes:</label>
+                <input type="file" name="images" id="img" multiple>
+            </div>
+            <div class="form__box--flex">
+                <div class="edit__img">
+                    <img src="../../img/harry-potter/hermione-1.webp" alt="Figura Funko coleccionable de Hermione">
+                    <p class="edit__img-side">Frente</p>
                 </div>
-                <div>
-                    <div>
-                        <img src="../../img/harry-potter/hermione-1.webp" alt="Figura Funko coleccionable de Hermione">
-                        <p>Frente</p>
-                    </div>
-                    <div>
-                        <img src="../../img/harry-potter/hermione-box.webp" alt="Figura Funko coleccionable de Hermione en caja">
-                        <p>Dorso</p>
-                    </div>
+                <div class="edit__img">
+                    <img src="../../img/harry-potter/hermione-box.webp" alt="Figura Funko coleccionable de Hermione en caja">
+                    <p class="edit__img-side">Dorso</p>
                 </div>
-                <div>
-                    <input type="submit" value="Agregar Producto">
-                    <input type="reset" value="Limpiar">
-                </div>
-            </form>
-        </section>
+            </div>
+            <div>
+                <input class="btn btn--primary btn--large" type="submit" value="Modificar Producto">
+                <input class="btn btn--primary btn--large" type="reset" value="Limpiar">
+            </div>
+        </form>
     </main>
-    <footer>
-        <section>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="../shop/shop.html">SHOP</a>
-                    </li>
-                    <li>
-                        <a href="./register.html">REGISTRARSE</a>
-                    </li>
-                    <li>
-                        <a href="./login.html">LOGIN</a>
-                    </li>
-                    <li>
-                        <a href="./contact.html">CONTACTO</a>
-                    </li>
-                </ul>
-                <picture>
-                    <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
-                </picture>
-            </nav>
-        </section>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/shop/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/admin/login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./pages/contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 </body>
 </html>

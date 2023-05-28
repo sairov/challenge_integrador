@@ -1,0 +1,22 @@
+#create {
+    margin: var(--spacing-68) auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--spacing-36);
+}
+
+.create__title {
+    font-size: var(--font-jumbo);
+}
+
+.create__form {
+    max-width: 990px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--spacing-48);
+}
+
