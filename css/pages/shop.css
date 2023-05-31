@@ -81,12 +81,13 @@
 .shop__content {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     gap: var(--spacing-36);
 }
 
 .shop__items {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-28);
 }
 
