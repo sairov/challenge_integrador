@@ -11,7 +11,9 @@ Este es un proyecto como parte del challenge integrador para el curso de NodeJS 
     - Flex
     - Grid
     - Bootstrap
-- JavaScript 
-
+- JavaScript
+- Node JS
+- Express JS
+- MySQL
 
 __Autor/a:__ Pepe Grillo

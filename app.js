@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 /* Import de la rutas */
 
@@ -8,7 +9,7 @@ const shopRoutes = require('./src/router/shopRoutes');
 const adminRoutes = require('./src/router/adminRoutes');
 const { notFoundPage } = require('./src/utils/errorHandlers');
 
-const PORT = 4000;
+const PORT = process.env.PORT || 3000;
 
 /* Define carpeta de archivos estáticos */
 
