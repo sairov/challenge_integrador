@@ -8,7 +8,6 @@ router.get('/create', controllers.createView);
 router.post('/create', controllers.createItem);
 router.get('/edit/:id', controllers.editView);
 router.put('/edit/:id', controllers.editItem);
-router.get('/delete/:id', controllers.deleteView);
 router.delete('/delete/:id', controllers.deleteItem);
 router.get('/login', controllers.loginView);
 router.post('/login', controllers.loginUser);
