@@ -1,0 +1,19 @@
+{
+  "name": "challenge_integrador",
+  "version": "1.0.0",
+  "description": "Este es un proyecto como parte del challenge integrador para el curso de NodeJS del Programa Codo a Codo 4.0.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
