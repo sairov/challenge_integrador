@@ -5,7 +5,7 @@ require('dotenv').config();
  * Creamos un pool de conexiones
  */
 
-const conn = mysql.createPool({
+const pool = mysql.createPool({
   host: process.env.HOST,
   user: process.env.USER,
   password: process.env.DBPASS,
@@ -20,7 +20,7 @@ const conn = mysql.createPool({
  * Testeamos que la conexión sea exitosa
  */
 
-conn.getConnection((error, connection) => {
+pool.getConnection((error, connection) => {
   if (error) {
     console.error('Error al obtener una conexión:', error);
   } else {
@@ -29,4 +29,6 @@ conn.getConnection((error, connection) => {
   }
 });
 
-module.exports = conn;
+module.exports = {
+  conn: pool.promise()
+};
