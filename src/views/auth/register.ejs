@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+<main id="register" class="container">
+  <div class="register__header">
+      <h2 class="register__title">CREA TU CUENTA</h2>
+      <p class="register__subtitle">Completa el formulario para ser parte del mundo de los Funkos</p>
+  </div>
+  <form class="register__form" action="/register" method="POST" enctype="application/x-www-form-urlencoded">
+      <div class="form__box--grid">
+          <label class="form__label" for="name">Nombre:</label>
+          <input class="form__input" type="text" name="name" id="name" placeholder="nombre" required>
+      </div>
+      <div class="form__box--grid">
+          <label class="form__label" for="lastname">Apellido:</label>
+          <input class="form__input" type="text" name="lastname" id="lastname" placeholder="apellido" required>
+      </div>
+      <div class="form__box--grid">
+          <label class="form__label" for="email">Email:</label>
+          <input class="form__input" type="email" name="email" id="email" placeholder="johndoe@email.com" required>
+      </div>
+      <div class="form__box--grid">
+          <label class="form__label" for="password">Contraseña:</label>
+          <input class="form__input" type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required>
+      </div>
+      <div class="form__box--grid">
+          <label class="form__label" for="repassword">Repite Contraseña:</label>
+          <input class="form__input" type="repassword" name="repassword" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required>
+      </div>
+      <div class="form__submission">
+          <input class="form__btn btn btn--primary btn--large" type="submit" value="Registrar">
+          <div class="form__terms">
+              <input type="checkbox" name="" id="">
+              <label for="">Acepto <a class="form__link" href="">Términos y Condiciones</a></label>
+          </div>
+      </div>
+  </form>
+</main>
+<%- include('../partials/footer') %>

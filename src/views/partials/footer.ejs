@@ -1,0 +1,44 @@
+<footer class="footer">
+  <nav class="navbar container">
+      <ul class="navbar__item">
+          <li class="navbar__item">
+              <a class="navbar__link" href="./pages/shop/shop.html">SHOP</a>
+          </li>
+          <li class="navbar__item">
+              <a class="navbar__link" href="./pages/register.html">REGISTRARSE</a>
+          </li>
+          <li class="navbar__item">
+              <a class="navbar__link" href="./pages/admin/login.html">LOGIN</a>
+          </li>
+          <li class="navbar__item">
+              <a class="navbar__link" href="./pages/contact.html">CONTACTO</a>
+          </li>
+      </ul>
+      <picture>
+          <img src="/img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
+      </picture>
+  </nav>
+  <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script>
+  new Glide('.glide',
+      {
+          type: 'carousel',
+          startAt: 0,
+          perView: 3,
+          gap: 30,
+          breakpoints: {
+              991: {
+                  perView: 2
+                  },
+              768: {
+                  perView: 1
+              }
+          }
+      }
+  ).mount();
+</script>
+</body>
+</html>

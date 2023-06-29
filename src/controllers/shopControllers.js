@@ -4,17 +4,28 @@ const ItemsService = require('../services/itemServices');
 module.exports = {
   shopView:  async (req, res) => {
     const items = await ItemsService.getAllItems();
-    res.send({
-      view: 'Shop view',
-      items
+    const { data } = items;
+    res.render( './shop/shop',{
+      view: {
+        title: "Shop | Funkoshop"
+      },
+      items: data
     });
   },
-  itemView: async (req, res) => {
+  detailView: async (req, res) => {
     const id = req.params.id;
     const item = await ItemsService.getItem(id);
-    res.send({
-      view: 'Item View',
-      item
+    const { data } = item;
+
+    if (!data[0]) {
+      res.status(404).send('El producto con el ID seleccionado no existe o fue eliminado');
+    }
+
+    res.render('./shop/detail', {
+      view: {
+        title: "Item | Funkoshop"
+      },
+      item: data[0]
     });
   },
   addItemToCart: (req, res) => res.send('Route to add a item to cart'),

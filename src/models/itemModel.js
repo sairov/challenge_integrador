@@ -23,7 +23,7 @@ const getAll = async () => {
 
 const getOne = async (params) => {
   try {
-    const [rows] = await conn.query('SELECT product.*, category.category_name, licence.licence_name FROM (product LEFT JOIN category ON product.category_id = category.category_id) LEFT JOIN licence ON product.category_id = licence.licence_id WHERE ?;', params);
+    const [rows] = await conn.query('SELECT product.*, category.category_name, licence.licence_name FROM (product LEFT JOIN category ON product.category_id = category.category_id) LEFT JOIN licence ON product.licence_id = licence.licence_id WHERE ?;', params);
     const response = {
       isError: false,
       data: rows
@@ -66,18 +66,15 @@ const create = async (params) => {
 
 const edit = async (params, id) => {
   try {
-    console.log(params);
-    console.log(id);
     const [rows] = await conn.query('UPDATE product SET ? WHERE ?;', [params, id]);
-    console.log(rows);
     const response = {
       isError: false,
-      message: `El item fue modificado exitosamente.`
+      message: `El item fue modificado exitosamente.`,
+      status: rows
     };
 
     return response;
   } catch (e) {
-    console.log(e);
     const error = {
       isError: true,
       message: `No pudimos modificar el item seleccionado, error: ${e}`
