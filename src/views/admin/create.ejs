@@ -1,24 +1,24 @@
 <%- include('../partials/header') %>
 <main id="create" class="container">
   <h2 class="create__title">CREAR NUEVO ITEM</h2>
-  <form class="create__form" action="/admin/create" method="POST" enctype="application/x-www-form-urlencoded">
+  <form class="create__form" action="/admin/create" method="POST" enctype="multipart/form-data">
       <div class="form__flex">
           <div class="form__box--flex">
               <label class="form__label" for="category">Categoría:</label>
               <select class="form__select" name="category" id="category" required>
                   <option value="" disabled selected hidden>Seleccionar</option>
-                  <option value="1">Figuras Coleccionables</option>
-                  <option value="2">Llaveros</option>
-                  <option value="3">Remeras</option>
+                  <% categories.forEach((category, i) => { %>
+                    <option value="<%= i+1%>"><%= category.category_name%></option>
+                  <% }); %>
               </select>
           </div>
           <div class="form__box--flex">
               <label class="form__label" for="collection">Licencia:</label>
               <select class="form__select" name="collection" id="collection" required>
                   <option value="" disabled selected hidden>Seleccionar</option>
-                  <option value="1">Pokemon</option>
-                  <option value="2">Star Wars</option>
-                  <option value="3">Harry Potter</option>
+                  <% licences.forEach((licence, i) => { %>
+                    <option value="<%= i+1%>"><%= licence.licence_name%></option>
+                  <% }); %>
               </select>
           </div>
       </div>

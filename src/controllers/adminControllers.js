@@ -14,16 +14,21 @@ module.exports = {
     });
   },
   createView:  async (req, res) =>{
+    const { data: categories } = await CategoryService.getAllItemsCategories();
+    const { data: licences } = await LicenceService.getAllItemsLicences();
 
     res.render('./admin/create', {
       view: {
         title: 'Create Product | Admin Funkoshop'
-      }
+      },
+      categories,
+      licences
     });
   },
   createItem:  async (req, res) => {
     const item = req.body;
-    await ItemsService.create(item);
+    const files = req.files;
+    await ItemsService.create(item, files);
     res.redirect('/admin');
   },
   bulkCreate:  async (req, res) => {

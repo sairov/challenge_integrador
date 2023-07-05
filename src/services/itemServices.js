@@ -8,7 +8,7 @@ const getItem = async (id) => {
   return await ItemModel.getOne({product_id: id});
 }
 
-const createItem = async (item) => {
+const createItem = async (item, files) => {
   const itemSchema = {
     product_name: item.name,
     product_description: item.description,
@@ -17,8 +17,8 @@ const createItem = async (item) => {
     discount: item.discount,
     sku: item.sku,
     dues: item.dues,
-    image_front: '/imagen_front',
-    image_back: '/imagen_front',
+    image_front: '/'+files[0].filename,
+    image_back: '/'+files[1].filename,
     licence_id: item.collection,
     category_id: item.category
   }
