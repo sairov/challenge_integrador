@@ -16,7 +16,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
-
 /* Configuración del Template Engine - EJS */
 
 app.set('view engine', 'ejs');
