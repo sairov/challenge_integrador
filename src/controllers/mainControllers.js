@@ -7,7 +7,8 @@ module.exports = {
       view: {
         title: "Home | Funkoshop"
       },
-      collections: licences.data
+      collections: licences.data,
+      enableGlide: true
     });
   },
   contactView:(req, res) => res.send('Contact View Route'),

@@ -7,7 +7,8 @@ const {
   loginView,
   loginUser,
   registerView,
-  registerUser
+  registerUser,
+  logoutUser
 } = require('../controllers/authControllers');
 
 const loginValidation = [
@@ -24,5 +25,6 @@ router.get('/login', loginView);
 router.post('/login', loginValidation, validateInput, loginUser);
 router.get('/register', registerView);
 router.post('/register', registerUser);
+router.get('/logout', logoutUser);
 
 module.exports = router;

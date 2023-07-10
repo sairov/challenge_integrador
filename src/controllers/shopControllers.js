@@ -25,7 +25,8 @@ module.exports = {
       view: {
         title: "Item | Funkoshop"
       },
-      item: data[0]
+      item: data[0],
+      enableGlide: true
     });
   },
   addItemToCart: (req, res) => res.send('Route to add a item to cart'),
