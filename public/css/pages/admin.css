@@ -42,7 +42,7 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-16);
-    font-size: var(--font-large);
+    font-size: var(--font-small);
     font-weight: 700;
 }
 
@@ -71,3 +71,13 @@
     margin-bottom: var(--spacing-24);
 }
 
+
+.admin-table__btn-delete {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-table__btn-delete iconify-icon {
+    font-size: 28px;
+}

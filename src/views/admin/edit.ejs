@@ -1,0 +1,81 @@
+<%- include('../partials/header') %>
+<main id="edit" class="container">
+  <h2 class="edit__title">EDITAR ITEM</h2>
+  <form class="edit__form" action="/admin/edit/<%= item.product_id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+      <div class="form__flex">
+          <div class="form__box--flex">
+               <label class="form__label" for="category">Categoría:</label>
+               <select class="form__select" name="category" id="category" required>
+                    <% categories.forEach((category, i) => { %>
+                        <option <% if (item.category_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= category.category_name%></option>
+                    <% }); %>
+               </select>
+          </div>
+          <div class="form__box--flex">
+              <label class="form__label" for="collection">Licencia:</label>
+              <select class="form__select" name="collection" id="collection" required>
+                    <% licences.forEach((licence, i) => { %>
+                        <option <% if (item.licence_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= licence.licence_name%></option>
+                    <% }); %>
+              </select>
+          </div>
+      </div>
+      <div class="form__box--flex">
+          <label class="form__label" for="name">Nombre del producto:</label>
+          <input class="form__input" type="text" name="name" id="name" value="<%= item.product_name %>" required>
+      </div>
+      <div>
+          <textarea name="description" id="description" cols="30" rows="6" required><%= item.product_description %></textarea>
+      </div>
+      <div class="form__flex">
+          <div class="form__box--flex">
+              <label class="form__label" for="sku">SKU:</label>
+              <input class="form__input" type="text" name="sku" id="sku" value="<%= item.sku %>" required>
+          </div>
+          <div class="form__box--flex">
+              <label class="form__label" for="price">Precio:</label>
+              <div class="form__input--wrapper"><span>$</span><input class="form__input" type="text" name="price" id="price" data-type="currency" value="<%= item.price %>"></div>
+          </div>
+          <div class="form__box--flex">
+              <label class="form__label" for="stock">Stock:</label>
+              <div class="form__input--wrapper"><input class="form__input" type="text" name="stock" id="stock" value="<%= item.stock %>" required><span>unidades</span></div>
+          </div>
+      </div>
+      <div class="form__flex">
+          <div class="form__box--flex">
+              <label class="form__label" for="discount">Descuento:</label>
+              <div class="form__input--wrapper"><input class="form__input" type="text" name="discount" id="discount" value="<%= item.discount %>" required><span>%</span></div>
+          </div>
+          <div class="form__box--flex">
+              <label class="form__label" for="dues">Cuotas:</label>
+              <select class="form__select" name="dues" id="dues">
+                  <option <% if (item.dues === 0) { %>selected<% } %> value="0">Sin cuotas</option>
+                  <option <% if (item.dues === 3) { %>selected<% } %> value="3">3 cuotas s/ interés</option>
+                  <option <% if (item.dues === 6) { %>selected<% } %> value="6">6 cuotas s/ interés</option>
+                  <option <% if (item.dues === 9) { %>selected<% } %> value="9">9 cuotas s/ interés</option>
+                  <option <% if (item.dues === 12) { %>selected<% } %> value="12">12 cuotas s/ interés</option>
+                  <option <% if (item.dues === 18) { %>selected<% } %> value="18">18 cuotas s/ interés</option>
+                  <option <% if (item.dues === 24) { %>selected<% } %> value="24">24 cuotas s/ interés</option>
+              </select>
+          </div>
+      </div>
+      <div class="form__box--flex">
+          <label class="form__label" for="images">Imagenes:</label>
+          <input type="file" name="images" id="img" multiple>
+      </div>
+      <div class="form__box--flex">
+          <div class="edit__img">
+              <img src="/img<%= item.image_front %>" alt="<%= item.product_name %>">
+              <p class="edit__img-side">Frente</p>
+          </div>
+          <div class="edit__img">
+              <img src="/img<%= item.image_back %>" alt="<%= item.product_name %> en caja">
+              <p class="edit__img-side">Dorso</p>
+          </div>
+      </div>
+      <div>
+          <input class="btn btn--primary btn--large" type="submit" value="Modificar Producto">
+      </div>
+  </form>
+</main>
+<%- include('../partials/footer') %>

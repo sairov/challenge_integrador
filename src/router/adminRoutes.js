@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const uploadFiles = require('../middlewares/uploadFiles');
+const { isLogged } = require('../middlewares/login');
 
 const controllers = require('../controllers/adminControllers');
 
+router.use(isLogged);
+
 router.get('/', controllers.adminView);
 router.get('/create', controllers.createView);
-router.post('/create', controllers.createItem);
+router.post('/create', uploadFiles.array('images', 2), controllers.createItem);
 router.post('/create/bulk', controllers.bulkCreate);
 router.get('/edit/:id', controllers.editView);
 router.put('/edit/:id', controllers.editItem);
 router.delete('/delete/:id', controllers.deleteItem);
-router.get('/login', controllers.loginView);
-router.post('/login', controllers.loginUser);
-router.get('/register', controllers.registerView);
-router.post('/register', controllers.registerUser);
 
 module.exports = router;
