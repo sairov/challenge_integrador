@@ -1,0 +1,79 @@
+<%- include('../partials/header') %>
+<main id="shop" class="container">
+  <aside class="shop__filters filters">
+      <div class="filters__search">
+          <label  class="filters__title" for="search">BUSCAR</label>
+          <input type="text" name="search" id="search" placeholder="item o categoría">
+      </div>
+      <div class="filters__order">
+          <label  class="filters__title" for="orderby">ORDERNAR POR</label>
+          <select name="orderby" id="orderby">
+              <option value="az">A-Z</option>
+              <option value="za">Z-A</option>
+              <option value="desc">Mayor precio</option>
+              <option value="asc">Menor precio</option>
+          </select>
+      </div>
+      <div class="filters__price">
+          <span class="filters__title" >PRECIO</span>
+          <div>
+              <label for="min">MIN</label>
+              <input type="text" name="min" id="min" placeholder="0">
+              <label for="max">- MAX</label>
+              <input type="text" name="max" id="max" placeholder="0">
+          </div>
+      </div>
+      <div class="filters__checks">
+          <span class="filters__title" for="filter">FILTRAR</span>
+          <div>
+              <input type="checkbox" name="filter" id="news" value="news">
+              <label for="">NUEVOS</label>
+          </div>
+          <div>
+              <input type="checkbox" name="filter" id="offers" value="offers">
+              <label for="">OFERTAS</label>
+          </div>
+          <div>
+              <input type="checkbox" name="filter" id="specials" value="specials">
+              <label for="">EDICIÓN ESPECIAL</label>
+          </div>
+          <div>
+              <input type="checkbox" name="filter" id="favs" value="favs">
+              <label for="">FAVORITOS</label>
+          </div>
+      </div>
+  </aside>
+  <section class="shop__content">
+      <ul class="shop__items">
+          <% items.forEach( item => { %>
+            <li class="shop__item">
+                <article class="card-item">
+                    <a class="card-item__link" href="/shop/item/<%= item.product_id%>">
+                       <picture class="card-item__cover">
+                            <span class="card-item__tag">Nuevo</span>
+                            <img class="card-item__img--front" src="../../img<%= item.image_front%>" alt="Figura coleccionable Funko de un Stormtrooper">
+                            <img class="card-item__img--back" src="../../img<%= item.image_back%>" alt="Figura coleccionable Funko de un Stormtrooper en caja">
+                        </picture>
+                       <div class="card-item__content">
+                            <p class="card-item__licence"><%= item.licence_name%></p>
+                            <h4 class="card-item__name"><%= item.product_name%></h4>
+                            <p class="card-item__price"><%= item.price%></p>
+                            <p class="card-item__promo"><%= item.dues%> CUOTAS SIN INTERÉS</p>
+                       </div>
+                    </a>
+                </article>
+            </li>
+          <% }); %>
+      </ul>
+      <div class="pagination">
+          <a class="pagination__link" href="#" ><</a>
+          <a class="pagination__link pagination__link--selected" href="#" >1</a>
+          <a class="pagination__link" href="#" >2</a>
+          <a class="pagination__link" href="#" >3</a>
+          <a class="pagination__link" href="#" >4</a>
+          <a class="pagination__link" href="#" >5</a>
+          <a class="pagination__link" href="#" >></a>
+      </div>
+  </section>
+</main>
+<%- include('../partials/footer') %>

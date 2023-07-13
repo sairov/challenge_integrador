@@ -8,7 +8,13 @@ const {
   faqsView,
 } = require('../controllers/mainControllers');
 
-router.get('/home', homeView);
+router.get('/', (req, res, next) => {
+
+  req.session.logs = req.session.logs ? ++req.session.logs : 1;
+  console.log(req.session.logs);
+
+  next();
+}, homeView);
 router.get('/contact', contactView);
 router.get('/about', aboutView);
 router.get('/faqs', faqsView);

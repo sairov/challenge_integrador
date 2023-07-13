@@ -2,10 +2,13 @@
 
 textarea {
     width: 100%;
+    font-size: var(--font-large);
+    padding: var(--spacing-8);
+    font-weight: 400;
+    font-family: var(--base-font);
 }
 
 textarea::placeholder {
-    padding: var(--spacing-8);
     color: gainsboro;
 }
 
