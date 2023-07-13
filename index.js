@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 
 /* Define carpeta de archivos estáticos */
 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname, "public")));
 
 /* Configuración del Template Engine - EJS */
 
