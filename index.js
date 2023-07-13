@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const methodOverride = require('method-override');
 const { initSession } = require('./src/utils/sessions');
 require('dotenv').config();
@@ -21,7 +22,7 @@ app.use(express.static('public'));
 /* Configuración del Template Engine - EJS */
 
 app.set('view engine', 'ejs');
-app.set('views', './src/views');
+app.set('views', path.resolve(__dirname, "./src/views"));
 
 
 /* Creamos la session de usuario */
