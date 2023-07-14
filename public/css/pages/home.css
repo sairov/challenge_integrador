@@ -65,7 +65,7 @@
     padding: var(--spacing-16) 0;
 }
 
-.collection:nth-child(2) .collection__cover {
+.collection:nth-child(even) .collection__cover {
     order: -1;
 }
 
